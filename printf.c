@@ -38,12 +38,11 @@ void _check(char sp, va_list arg)
  */
 int _printf(const char *format, ...)
 {
+	int n, i = 0;
+	va_list arg;
+
 	if (!format)
 		return (-1);
-
-	va_list arg;
-	int n, i = 0;
-
 	va_start(arg, format);
 	for (n = 0; format[n] != '\0'; n++)
 	{
