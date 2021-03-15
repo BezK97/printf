@@ -8,20 +8,14 @@
  */
 void format_int(int num)
 {
-	unsigned int n;
-
 	if (num < 0)
 	{
 		_putchar('-');
-		n = -num;
+		num = -num;
 	}
-	else
+	if (num / 10 != 0)
 	{
-		n = num;
+		format_int(num / 10);
 	}
-	if (n >= 10)
-	{
-		format_int(n / 10);
-	}
-	_putchar(n % 10 + '0');
+	_putchar(num % 10 + '0');
 }
