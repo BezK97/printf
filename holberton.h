@@ -7,8 +7,8 @@
 int _putchar(char c);
 int _printf(const char *format, ...);
 int _putchar(char c);
-void format_int(int num);
-void format_un(int num);
-void format_str(char *str);
+int format_int(int num, int i);
+int format_un(unsigned int num);
+int format_str(char *str, int i);
 
 #endif
