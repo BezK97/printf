@@ -6,29 +6,31 @@
  * @sp: specifier to check
  * @arg: argument
  */
-void _check(char sp, va_list arg)
+int _check(char sp, va_list arg)
 {
+	int i = 1;
+
 	switch (sp)
 	{
 	case 'c':
-		_putchar((char) va_arg(arg, int));
-		break;
+		i = _putchar((char) va_arg(arg, int));
+		return (i);
 	case 'd':
-		format_int(va_arg(arg, int));
-		break;
+		i = format_int(va_arg(arg, int), i);
+		return (i);
 	case 'i':
-		format_int(va_arg(arg, int));
-		break;
+		i = format_int(va_arg(arg, int), i);
+		return (i);
 	case 's':
-		format_str(va_arg(arg, char *));
-		break;
+		i = format_str(va_arg(arg, char *), i);
+		return (i);
 	case 'u':
-		format_un(va_arg(arg, unsigned int));
-		break;
+		i = format_un(va_arg(arg, unsigned int));
+		return (i);
 	default:
 		_putchar('%');
 		_putchar(sp);
-		break;
+		return (2);
 	}
 }
 
@@ -65,7 +67,7 @@ int _printf(const char *format, ...)
 			}
 			if (format[n + 1] == '\0')
 				break;
-			_check(format[n + 1], arg);
+			i = i + _check(format[n + 1], arg);
 			n = n + 2;
 		}
 		_putchar(format[n]);
