@@ -4,12 +4,17 @@
  * format_str - Function that prints string
  *
  * @str: Pointer to string
+ * @i: index
+ *
+ * Return: i, number of character printed
  */
-void format_str(char *str)
+int format_str(char *str, int i)
 {
 	if (*str == '\0')
-		return;
+		return (0);
 	_putchar(*str);
 	str++;
-	format_str(str);
+	format_str(str, i);
+	i++;
+	return (i);
 }
