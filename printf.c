@@ -22,6 +22,9 @@ void _check(char sp, va_list arg)
 	case 's':
 		format_str(va_arg(arg, char *));
 		break;
+	case 'u':
+		format_un(va_arg(arg, unsigned int));
+		break;
 	default:
 		_putchar('%');
 		_putchar(sp);
