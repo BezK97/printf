@@ -5,6 +5,8 @@
  *
  * @sp: specifier to check
  * @arg: argument
+ *
+ * Return: i, number of character printed
  */
 int _check(char sp, va_list arg)
 {
