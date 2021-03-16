@@ -1,5 +1,10 @@
 #include "holberton.h"
 
+/**
+ * format_un - Function that prints unsigned int
+ *
+ * @num: integer to print
+ */
 void format_un(unsigned int num)
 {
 	int d = 1;
