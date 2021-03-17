@@ -33,7 +33,7 @@ void format_X(va_list arg, char *buffer, int *i);
 
 char *itos(char str[], long int n);
 char *utos(char str[], unsigned int num);
-int num_len(int num);
+int num_len(unsigned int num);
 int _strlen(char *s);
 
 #endif
