@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	int n, j, x = 0, *i = &x;
 
 	va_list arg;
-	vtype_t specifier[] = {{'c', format_c}, {'s', format_str}, {'\0', NULL},
+	vtype_t specifier[] = {{'c', format_c}, {'s', format_str},
 			       {'%', format_pers}, {'d', format_d},
 			       {'i', format_d}, {'p', format_p}, {'u', format_u},
 			       {'o', format_o}, {'x', format_x}, {'X', format_X}
