@@ -13,7 +13,8 @@ void format_str(va_list arg, char *buffer, int *i)
 	char *s;
 
 	s = va_arg(arg, char*);
-
+	if (s == NULL)
+		s = "(null)";
 	for (n = *i, j = 0; s[j] != '\0';  *i += 1, n++, j++)
 	{
 		if (*i == 1024)
