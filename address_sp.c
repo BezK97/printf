@@ -23,7 +23,7 @@ void format_p(va_list arg, char *buffer, int *i)
 			buffer[*i] = b[x];
 	n = (unsigned long int)a;
 	hexvalues = "0123456789abcdef";
-	hex = malloc(14 * sizeof(char));
+	hex = malloc(18 * sizeof(char));
 
 	for (x = 0; n != 0; x++)
 	{
@@ -31,10 +31,11 @@ void format_p(va_list arg, char *buffer, int *i)
 		n /= 16;
 	}
 	x += 2;
-	hex[13] = '0';
-	hex[12] = 'x';
+	hex[17] = '0';
+	hex[16] = 'x';
 	for (x--; x >= 0; *i += 1, x--)
 	{
 		buffer[*i] = hex[x];
 	}
+	free(hex);
 }
