@@ -20,12 +20,14 @@ void format_o(va_list arg, char *buffer, int *i)
 	oct = malloc(12 * sizeof(char));
 	if (oct == NULL)
 		return;
+	if (n == 0)
+		oct[0] == '0';
 	for (x = 0; n != 0; x++)
 	{
 		oct[x] = octvalues[n % 8];
 		n /= 8;
 	}
-	for (x--; x >= 0; *i += 1, x--)
+	for (; x >= 0; *i += 1, x--)
 	{
 		buffer[*i] = oct[x];
 	}
