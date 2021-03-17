@@ -26,7 +26,7 @@ void format_x(va_list arg, char *buffer, int *i)
 		hex[x] = hexvalues[n % 16];
 		n /= 16;
 	}
-	for (x; x >= 0; *i += 1, x--)
+	for (; x >= 0; *i += 1, x--)
 	{
 		buffer[*i] = hex[x];
 	}
