@@ -10,7 +10,7 @@
 void format_o(va_list arg, char *buffer, int *i)
 {
 	unsigned int n;
-	int x;
+	int x = 0;
 	char *octvalues;
 	char *oct;
 
@@ -21,13 +21,16 @@ void format_o(va_list arg, char *buffer, int *i)
 	if (oct == NULL)
 		return;
 	if (n == 0)
+	{
 		oct[0] = '0';
-	for (x = 0; n != 0; x++)
+		x++;
+	}
+	for (; n != 0; x++)
 	{
 		oct[x] = octvalues[n % 8];
 		n /= 8;
 	}
-	for (; x >= 0; *i += 1, x--)
+	for (x--; x >= 0; *i += 1, x--)
 	{
 		buffer[*i] = oct[x];
 	}
