@@ -7,11 +7,11 @@
  */
 void reset_putchar(char *buffer)
 {
-        int i;
+	int i;
 
-        for (i = 0; i < 1024; i++)
-        {
-                buffer[i] = 0;
-        }
-        buffer[i] = '\0';
+	for (i = 0; i < 1024; i++)
+	{
+		buffer[i] = 0;
+	}
+	buffer[i] = '\0';
 }
