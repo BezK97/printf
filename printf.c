@@ -30,9 +30,7 @@ int _check(char sp, va_list arg)
 		i = format_un(va_arg(arg, unsigned int));
 		return (i);
 	default:
-		_putchar('%');
-		_putchar(sp);
-		return (2);
+		return (0);
 	}
 }
 
@@ -68,10 +66,7 @@ int _printf(const char *format, ...)
 				break;
 			}
 			else if (format[n + 1] == '\0')
-			{
 				_putchar(format[n]);
-				break;
-			}
 			i = i + _check(format[n + 1], arg);
 			n = n + 2;
 		}
