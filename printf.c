@@ -9,7 +9,7 @@
  */
 int _printf(const char *format, ...)
 {
-	char buffer[1024];
+	char buffer[10240];
 	int n, j, x = 0, *i = &x;
 
 	va_list arg;
