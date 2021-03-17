@@ -64,6 +64,8 @@ char *utos(char str[], unsigned int num)
 	unsigned int n;
 
 	n = num;
+	if (n == 0)
+		len = 1;
 	while (n != 0)
 	{
 		len++;
