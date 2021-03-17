@@ -67,8 +67,11 @@ int _printf(const char *format, ...)
 				}
 				break;
 			}
-			if (format[n + 1] == '\0')
+			else if (format[n + 1] == '\0')
+			{
+				_putchar(format[n]);
 				break;
+			}
 			i = i + _check(format[n + 1], arg);
 			n = n + 2;
 		}
