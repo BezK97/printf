@@ -40,6 +40,13 @@ int _printf(const char *format, ...)
 			n++;
 			for (j = 0; specifier[j].sp != '\0'; j++)
 			{
+				if (specifier[j + 1].sp == '\0')
+				{
+					buffer[*i] = format[n - 1];
+					*i += 1;
+					buffer[*i] = format[n];
+					*i += 1;
+				}
 				if (format[n] == specifier[j].sp)
 				{
 					specifier[j].fo(arg, buffer, i);
