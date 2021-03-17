@@ -1,42 +1,6 @@
 #include "holberton.h"
 
 /**
- * _check - Function that checks specifiers
- *
- * @sp: specifier to check
- * @arg: argument
- *
- * Return: i, number of character printed
- */
-int _check(char sp, va_list arg)
-{
-	int i = 1;
-
-	switch (sp)
-	{
-	case 'c':
-		i = _putchar((char) va_arg(arg, int));
-		return (i);
-	case 'd':
-		i = format_int(va_arg(arg, int), i);
-		return (i);
-	case 'i':
-		i = format_int(va_arg(arg, int), i);
-		return (i);
-	case 's':
-		i = format_str(va_arg(arg, char *), i);
-		return (i);
-	case 'u':
-		i = format_un(va_arg(arg, unsigned int));
-		return (i);
-	default:
-		_putchar('%');
-		_putchar(sp);
-		return (2);
-	}
-}
-
-/**
  * _printf - function that prints according to a format
  *
  * @format: String composed of zero ot more characters to print
@@ -45,36 +9,47 @@ int _check(char sp, va_list arg)
  */
 int _printf(const char *format, ...)
 {
-	int n, i = 0;
-	va_list arg;
+	char buffer[1024];
+	int n, j, x = 0, *i = &x;
 
+	va_list arg;
+	vtype_t specifier[] = {{'c', format_c}, {'s', format_str},
+			       {'%', format_pers}, {'d', format_d},
+			       {'i', format_d}, {'p', format_p}, {'u', format_u},
+			       {'o', format_o}, {'x', format_x}, {'X', format_X}
+	};
 	if (!format)
 		return (-1);
 	va_start(arg, format);
 	for (n = 0; format[n] != '\0'; n++)
 	{
+		for (; format[n] != '%' && format[n] != '\0'; *i += 1, n++)
+		{
+			if (*i == 1024)
+			{
+				_putchar(buffer, i);
+				reset_putchar(buffer);
+				*i = 0;
+			}
+			buffer[*i] = format[n];
+		}
+		if (format[n] == '\0')
+			break;
 		if (format[n] == '%')
 		{
-			if (format[n + 1] == '%')
+			n++;
+			for (j = 0; specifier[j].sp != '\0'; j++)
 			{
-				_putchar('%');
-				i++;
-				n = n + 2;
-				for (; format[n] != '\0'; n++)
+				if (format[n] == specifier[j].sp)
 				{
-					_putchar(format[n]);
-					i++;
+					specifier[j].fo(arg, buffer, i);
+					break;
 				}
-				break;
 			}
-			if (format[n + 1] == '\0')
-				break;
-			i = i + _check(format[n + 1], arg);
-			n = n + 2;
 		}
-		_putchar(format[n]);
-		i++;
 	}
 	va_end(arg);
-	return (i);
+	buffer[*i] = '\0';
+	_putchar(buffer, i);
+	return (*i);
 }
