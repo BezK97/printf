@@ -1,26 +1,39 @@
 #include "holberton.h"
+#include <stdlib.h>
+#include <string.h>
 
 /**
- * format_int - Function that prints integer
+ * format_d - Function that prints signed integer
  *
- * @num: integer to print
- * @i: index
- *
- * Return: i, number of printed character
+ * @arg: List of arguments
+ * @buffer: array of string containing integer
+ * @i: pointer to number of character
  */
-int format_int(int num, int i)
+void format_d(va_list arg, char *buffer, int *i)
 {
-	if (num < 0)
+	int x, j, numlen;
+	char *num_str;
+
+	x = va_arg(arg, int);
+
+	numlen = num_len(x);
+	if (x < 0)
 	{
-		_putchar('-');
-		num = -num;
-		i++;
+		numlen += 1;
 	}
-	if (num / 10 != 0)
+	num_str = malloc(numlen * sizeof(char));
+	if (num_str == NULL)
+		return;
+	itos(num_str, x);
+	for (x = *i, j = 0; j < numlen; *i += 1, x++, j++)
 	{
-		format_int(num / 10, i);
+		if (*i == 1024)
+		{
+			_putchar(buffer, i);
+			reset_putchar(buffer);
+			*i = 0;
+		}
+		buffer[*i] = num_str[j];
 	}
-	_putchar(num % 10 + '0');
-	i++;
-	return (i);
+	free(num_str);
 }
