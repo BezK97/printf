@@ -60,7 +60,8 @@ char *itos(char str[], long int n)
  */
 char *utos(char str[], unsigned int num)
 {
-	int i, rem, len = 0, n;
+	int i, rem, len = 0;
+	unsigned int n;
 
 	n = num;
 	while (n != 0)
@@ -90,9 +91,10 @@ char *utos(char str[], unsigned int num)
  *
  * Return: len, length of number
  */
-int num_len(int num)
+int num_len(unsigned int num)
 {
-	int n, len;
+	unsigned int n;
+	int len;
 
 	n = num;
 	len = 0;
