@@ -19,12 +19,14 @@ void format_x(va_list arg, char *buffer, int *i)
 	hex = malloc(9 * sizeof(char));
 	if (hex == NULL)
 		return;
+	if (n == 0)
+		hex[0] = '0';
 	for (x = 0; n != 0; x++)
 	{
 		hex[x] = hexvalues[n % 16];
 		n /= 16;
 	}
-	for (x--; x >= 0; *i += 1, x--)
+	for (x; x >= 0; *i += 1, x--)
 	{
 		buffer[*i] = hex[x];
 	}
@@ -50,12 +52,14 @@ void format_X(va_list arg, char *buffer, int *i)
 	hex = malloc(9 * sizeof(char));
 	if (hex == NULL)
 		return;
+	if (n == 0)
+		hex[0] = '0';
 	for (x = 0; n != 0; x++)
 	{
 		hex[x] = hexvalues[n % 16];
 		n /= 16;
 	}
-	for (x--; x >= 0; *i += 1, x--)
+	for (; x >= 0; *i += 1, x--)
 	{
 		buffer[*i] = hex[x];
 	}
