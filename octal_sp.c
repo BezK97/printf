@@ -21,7 +21,7 @@ void format_o(va_list arg, char *buffer, int *i)
 	if (oct == NULL)
 		return;
 	if (n == 0)
-		oct[0] == '0';
+		oct[0] = '0';
 	for (x = 0; n != 0; x++)
 	{
 		oct[x] = octvalues[n % 8];
