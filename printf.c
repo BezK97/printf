@@ -35,6 +35,8 @@ int _printf(const char *format, ...)
 		}
 		if (format[n] == '\0')
 			break;
+		if (format[n] == '%' && format[n + 1] == '\0')
+			return (-1);
 		if (format[n] == '%' && format[n + 1] != '\0')
 		{
 			n++;
