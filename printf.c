@@ -30,7 +30,9 @@ int _check(char sp, va_list arg)
 		i = format_un(va_arg(arg, unsigned int));
 		return (i);
 	default:
-		return (0);
+		_putchar('%');
+		_putchar(sp);
+		return (2);
 	}
 }
 
