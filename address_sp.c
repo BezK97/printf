@@ -19,8 +19,12 @@ void format_p(va_list arg, char *buffer, int *i)
 	a = va_arg(arg, void *);
 	b = "(nil)";
 	if (a == NULL)
+	{
 		for (x = 0; x < 5; x++, *i += 1)
+		{
 			buffer[*i] = b[x];
+		}
+	}
 	n = (unsigned long int)a;
 	hexvalues = "0123456789abcdef";
 	hex = malloc(14 * sizeof(char));
@@ -35,11 +39,13 @@ void format_p(va_list arg, char *buffer, int *i)
 	{
 		count++;
 	}
+	if (hex[0] != '\0')
+	{
 	hex[count + 1] = '0';
 	hex[count] = 'x';
+	}
 	for (x--; x >= 0; *i += 1, x--)
 	{
 		buffer[*i] = hex[x];
 	}
-	
 }
