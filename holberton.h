@@ -29,8 +29,10 @@ void format_p(va_list arg, char *buffer, int *i);
 void format_o(va_list arg, char *buffer, int *i);
 void format_x(va_list arg, char *buffer, int *i);
 void format_X(va_list arg, char *buffer, int *i);
+void format_r(va_list arg, char *buffer, int *i);
+void format_R(va_list arg, char *buffer, int *i);
 
-
+void func_sp(va_list arg, char *buffer, const char *format, int n, int *i);
 char *itos(char str[], long int n);
 char *utos(char str[], unsigned int num);
 int num_len(unsigned int num);
