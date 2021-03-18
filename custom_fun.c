@@ -1,6 +1,7 @@
 #include "holberton.h"
 /**
  * format_r - reverse a string passed in
+ *
  * @arg: argument passed in
  * @buffer: values stored
  * @i: returns pointer to index
@@ -40,7 +41,7 @@ void format_R(va_list arg, char *buffer, int *i)
 	int k, j;
 
 	s = va_arg(arg, char*);
-        s1 = "abcdefghijklmABCDEFGHIJKLM ,?!;'@-=+\"\\$%^&*()`~<>/:[]{}_|.\n";
+	s1 = "abcdefghijklmABCDEFGHIJKLM ,?!;'@-=+\"\\$%^&*()`~<>/:[]{}_|.\n";
 	s2 = "nopqrstuvwxyzNOPQRSTUVWXYZ ,?!;'@-=+\"\\$%^&*()`~<>/:[]{}_|.\n";
 
 	for (k = 0; s[k] != '\0'; k++, *i += 1)
