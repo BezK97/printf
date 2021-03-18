@@ -35,18 +35,11 @@ void format_p(va_list arg, char *buffer, int *i)
 	{
 		count++;
 	}
-	if (count == 16)
-	{
-		hex[17] = '0';
-		hex[16] = 'x';
-	}
-	else
-	{
-		hex[13] = '0';
-		hex[12] = 'x';
-	}
+	hex[count + 1] = '0';
+	hex[count] = 'x';
 	for (x--; x >= 0; *i += 1, x--)
 	{
 		buffer[*i] = hex[x];
 	}
+	
 }
