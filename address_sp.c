@@ -10,7 +10,7 @@
 void format_p(va_list arg, char *buffer, int *i)
 {
 	unsigned long int n;
-	int x;
+	int x, index, count = 0;
 	char *hexvalues;
 	char *hex;
 	void *a;
@@ -31,8 +31,20 @@ void format_p(va_list arg, char *buffer, int *i)
 		n /= 16;
 	}
 	x += 2;
-	hex[13] = '0';
-	hex[12] = 'x';
+	for (index = 0; hex[index] != '\0'; index++)
+	{
+		count++;
+	}
+	if (count == 16)
+	{
+		hex[17] = '0';
+		hex[16] = 'x';
+	}
+	else
+	{
+		hex[13] = '0';
+		hex[12] = 'x';
+	}
 	for (x--; x >= 0; *i += 1, x--)
 	{
 		buffer[*i] = hex[x];
