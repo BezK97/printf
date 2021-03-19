@@ -64,7 +64,7 @@ void format_R(va_list arg, char *buffer, int *i)
  */
 void format_b(va_list arg, char *buffer, int *i)
 {
-	unsigned int n, m;
+	int n, m;
 	int *num, j, count = 0;
 	char *num_str, *num_str2;
 
