@@ -18,7 +18,7 @@ void func_sp(va_list arg, char *buffer, const char *format, int n, int *i)
 		{'%', format_pers}, {'d', format_d},
 		{'i', format_d}, {'p', format_p}, {'u', format_u},
 		{'o', format_o}, {'x', format_x}, {'X', format_X},
-		{'r', format_r}, {'R', format_R}, {'b', format_b}
+		{'r', format_r}, {'R', format_R}
 	};
 
 	for (j = 0; specifier[j].sp != '\0'; j++)
