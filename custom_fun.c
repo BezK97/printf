@@ -80,7 +80,7 @@ void format_b(va_list arg, char *buffer, int *i)
 	num_str = malloc(sizeof(char) * count);
 	num_str2 = malloc(sizeof(char) * count);
 	if (num == NULL || num_str == NULL)
-		exit(-1);
+		return;
 	for (j = 0; n > 0; j++)
 	{
 		num[j] = n % 2;
