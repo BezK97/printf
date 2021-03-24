@@ -19,12 +19,12 @@ int func_sp(va_list arg, char *buffer, const char *format, int n, int *i)
 		{'i', format_d}, {'p', format_p}, {'u', format_u},
 		{'o', format_o}, {'x', format_x}, {'X', format_X},
 		{'r', format_r}, {'R', format_R}, {'+', flag_plus},
-		{' ', flag_spc}, {'#', flag_hash}
+		{' ', flag_spc}, {'#', flag_hash}, {'0', flag_0}
 	};
 
 	for (j = 0; specifier[j].sp != '\0'; j++)
 	{
-		if (specifier[j + 1].sp == '\0')
+		if (specifier[j + 1].sp == '\0' && specifier[j].sp != '0')
 		{
 			buffer[*i] = format[n - 1];
 			*i += 1;
@@ -33,7 +33,8 @@ int func_sp(va_list arg, char *buffer, const char *format, int n, int *i)
 		}
 		if (format[n] == specifier[j].sp)
 		{
-			if (format[n] == ' ' || format[n] == '#')
+			if ((format[n] == ' ' || format[n] == '#') ||
+			    format[n] == '0')
 				k = specifier[j].fo(arg, buffer, format, n, i);
 			else
 				k = specifier[j].fo(arg, buffer, i);
