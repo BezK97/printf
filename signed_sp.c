@@ -9,7 +9,7 @@
  * @buffer: array of string containing integer
  * @i: pointer to number of character
  */
-void format_d(va_list arg, char *buffer, int *i)
+int format_d(va_list arg, char *buffer, int *i)
 {
 	int x, j, numlen;
 	char *num_str;
@@ -36,4 +36,5 @@ void format_d(va_list arg, char *buffer, int *i)
 		buffer[*i] = num_str[j];
 	}
 	free(num_str);
+	return (0);
 }
