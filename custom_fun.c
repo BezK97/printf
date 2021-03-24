@@ -6,7 +6,7 @@
  * @buffer: values stored
  * @i: returns pointer to index
  */
-void format_r(va_list arg, char *buffer, int *i)
+int format_r(va_list arg, char *buffer, int *i)
 {
 	int n, strlen;
 	char *s;
@@ -27,6 +27,7 @@ void format_r(va_list arg, char *buffer, int *i)
 		}
 		buffer[*i] = s[n];
 	}
+	return (0);
 }
 
 /**
@@ -35,7 +36,7 @@ void format_r(va_list arg, char *buffer, int *i)
  * @buffer: values stored
  * @i: tracks index position
  */
-void format_R(va_list arg, char *buffer, int *i)
+int format_R(va_list arg, char *buffer, int *i)
 {
 	char *s, *s1, *s2;
 	int k, j;
@@ -54,4 +55,5 @@ void format_R(va_list arg, char *buffer, int *i)
 				buffer[*i] = s1[j];
 		}
 	}
+	return (0);
 }
