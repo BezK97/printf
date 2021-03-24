@@ -7,7 +7,7 @@
  * @buffer: array that stores string
  * @i: pointer to number of character
  */
-void format_p(va_list arg, char *buffer, int *i)
+int format_p(va_list arg, char *buffer, int *i)
 {
 	unsigned long int n;
 	int x, index, count = 0;
@@ -48,4 +48,5 @@ void format_p(va_list arg, char *buffer, int *i)
 	{
 		buffer[*i] = hex[x];
 	}
+	return (0);
 }
