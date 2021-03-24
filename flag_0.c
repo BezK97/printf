@@ -52,7 +52,7 @@ void flag_0x(int m, char *buffer, int *i, int k, int l)
 	if (hex == NULL)
 		return;
 	if (m == 0)
-		hex [0] = '0';
+		hex[l] = '0';
 	for (x = 0; m != 0; x++, count++)
 	{
 		hex[x] = hexvalues[m % 16];
@@ -93,7 +93,7 @@ void flag_0X(int m, char *buffer, int *i, int k, int l)
 	if (hex == NULL)
 		return;
 	if (m == 0)
-		hex [0] = '0';
+		hex[l] = '0';
 	for (x = 0; m != 0; x++, count++)
 	{
 		hex[x] = hexvalues[m % 16];
