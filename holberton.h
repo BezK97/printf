@@ -20,7 +20,7 @@ typedef struct vtype
 void _putchar(char *buffer, int *i);
 void reset_putchar(char *buffer);
 int _printf(const char *format, ...);
-void func_sp(va_list arg, char *buffer, const char *format, int n, int *i);
+int func_sp(va_list arg, char *buffer, const char *format, int n, int *i);
 
 int format_str(va_list arg, char *buffer, int *i);
 int format_c(va_list arg, char *buffer, int *i);
