@@ -7,7 +7,7 @@
  * @buffer: array that stores string
  * @i: pointer to number of character
  */
-void format_u(va_list arg, char *buffer, int *i)
+int format_u(va_list arg, char *buffer, int *i)
 {
 	unsigned int x;
 	int j, numlen;
@@ -30,4 +30,5 @@ void format_u(va_list arg, char *buffer, int *i)
 		buffer[*i] = num_str[j];
 	}
 	free(num_str);
+	return (0);
 }
