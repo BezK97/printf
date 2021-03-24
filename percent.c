@@ -7,8 +7,9 @@
  * @buffer: array to store '%'
  * @i: pointer to the number of character
  */
-void format_pers(__attribute__((unused))va_list arg, char *buffer, int *i)
+int format_pers(__attribute__((unused))va_list arg, char *buffer, int *i)
 {
 	buffer[*i] = '%';
 	*i += 1;
+	return(0);
 }
