@@ -34,6 +34,7 @@ void format_x(va_list arg, char *buffer, int *i)
 		buffer[*i] = hex[x];
 	}
 	free(hex);
+	return (0);
 }
 
 /**
@@ -70,4 +71,5 @@ void format_X(va_list arg, char *buffer, int *i)
 		buffer[*i] = hex[x];
 	}
 	free(hex);
+	return (0);
 }
