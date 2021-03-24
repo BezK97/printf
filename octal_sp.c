@@ -7,7 +7,7 @@
  * @buffer: array that stores string
  * @i: pointer to number of character
  */
-void format_o(va_list arg, char *buffer, int *i)
+int format_o(va_list arg, char *buffer, int *i)
 {
 	unsigned int n;
 	int x = 0;
@@ -19,7 +19,7 @@ void format_o(va_list arg, char *buffer, int *i)
 
 	oct = malloc(12 * sizeof(char));
 	if (oct == NULL)
-		return;
+		return(-1);
 	if (n == 0)
 	{
 		oct[0] = '0';
