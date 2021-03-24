@@ -14,25 +14,30 @@
 typedef struct vtype
 {
 	char sp;
-	void (*fo)();
+	int (*fo)();
 } vtype_t;
 
 void _putchar(char *buffer, int *i);
 void reset_putchar(char *buffer);
 int _printf(const char *format, ...);
-void format_str(va_list arg, char *buffer, int *i);
-void format_c(va_list arg, char *buffer, int *i);
-void format_pers(__attribute__((unused))va_list arg, char *buffer, int *i);
-void format_d(va_list arg, char *buffer, int *i);
-void format_u(va_list arg, char *buffer, int *i);
-void format_p(va_list arg, char *buffer, int *i);
-void format_o(va_list arg, char *buffer, int *i);
-void format_x(va_list arg, char *buffer, int *i);
-void format_X(va_list arg, char *buffer, int *i);
-void format_r(va_list arg, char *buffer, int *i);
-void format_R(va_list arg, char *buffer, int *i);
-
 void func_sp(va_list arg, char *buffer, const char *format, int n, int *i);
+
+int format_str(va_list arg, char *buffer, int *i);
+int format_c(va_list arg, char *buffer, int *i);
+int format_pers(__attribute__((unused))va_list arg, char *buffer, int *i);
+int format_d(va_list arg, char *buffer, int *i);
+int format_u(va_list arg, char *buffer, int *i);
+int format_p(va_list arg, char *buffer, int *i);
+int format_o(va_list arg, char *buffer, int *i);
+int format_x(va_list arg, char *buffer, int *i);
+int format_X(va_list arg, char *buffer, int *i);
+int format_r(va_list arg, char *buffer, int *i);
+int format_R(va_list arg, char *buffer, int *i);
+
+int flag_plus(va_list arg, char *buffer, int *i);
+int flag_spc(va_list arg, char *buffer, const char *format,int n, int *i);
+int flag_hash(va_list arg, char *buffer, const char *format,int n, int *i);
+
 char *itos(char str[], long int n);
 char *utos(char str[], unsigned int num);
 int num_len(unsigned int num);
