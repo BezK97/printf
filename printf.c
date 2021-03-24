@@ -9,16 +9,17 @@
  *@n: Integers that contains the index of the string.
  *@i:pointer to number of character.
  */
-void func_sp(va_list arg, char *buffer, const char *format, int n, int *i)
+int func_sp(va_list arg, char *buffer, const char *format, int n, int *i)
 {
-	int j;
+	int j, k;
 
 	vtype_t specifier[] = {
 		{'c', format_c}, {'s', format_str},
 		{'%', format_pers}, {'d', format_d},
 		{'i', format_d}, {'p', format_p}, {'u', format_u},
 		{'o', format_o}, {'x', format_x}, {'X', format_X},
-		{'r', format_r}, {'R', format_R}
+		{'r', format_r}, {'R', format_R}, {'+', flag_plus},
+		{' ', flag_spc}, {'#', flag_hash}
 	};
 
 	for (j = 0; specifier[j].sp != '\0'; j++)
@@ -32,11 +33,14 @@ void func_sp(va_list arg, char *buffer, const char *format, int n, int *i)
 		}
 		if (format[n] == specifier[j].sp)
 		{
-			specifier[j].fo(arg, buffer, i);
+			if (format[n] == ' ' || format[n] == '#')
+				k = specifier[j].fo(arg, buffer, format, n, i);
+			else
+				k = specifier[j].fo(arg, buffer, i);
 			break;
 		}
 	}
-
+	return (k);
 }
 /**
  * _printf - function that prints according to a format
@@ -75,7 +79,7 @@ int _printf(const char *format, ...)
 		if (format[n] == '%' && format[n + 1] != '\0')
 		{
 			n++;
-			func_sp(arg, buffer, format, n, i);
+			n += func_sp(arg, buffer, format, n, i);
 		}
 	}
 	va_end(arg);
