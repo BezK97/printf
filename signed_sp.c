@@ -23,7 +23,7 @@ int format_d(va_list arg, char *buffer, int *i)
 	}
 	num_str = malloc(numlen * sizeof(char));
 	if (num_str == NULL)
-		return;
+		return (-1);
 	itos(num_str, x);
 	for (x = *i, j = 0; j < numlen; *i += 1, x++, j++)
 	{
