@@ -7,7 +7,7 @@
  * @buffer: array that stores string
  * @i: pointer to number of character
  */
-void format_str(va_list arg, char *buffer, int *i)
+int format_str(va_list arg, char *buffer, int *i)
 {
 	int n, j;
 	char *s;
@@ -25,6 +25,7 @@ void format_str(va_list arg, char *buffer, int *i)
 		}
 		buffer[*i] = s[j];
 	}
+	return (0);
 }
 
 /**
@@ -47,4 +48,5 @@ void format_c(va_list arg, char *buffer, int *i)
 	}
 	buffer[*i] = s;
 	*i += 1;
+	return (0);
 }
