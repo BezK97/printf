@@ -6,6 +6,8 @@
  * @arg: list of argument
  * @buffer: array that stores string
  * @i: pointer to number of character
+ *
+ * Return: 1 on success
  */
 int format_p(va_list arg, char *buffer, int *i)
 {
