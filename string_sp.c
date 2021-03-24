@@ -35,7 +35,7 @@ int format_str(va_list arg, char *buffer, int *i)
  * @buffer: array that stores string
  * @i: pointer to number of character
  */
-void format_c(va_list arg, char *buffer, int *i)
+int format_c(va_list arg, char *buffer, int *i)
 {
 	char s;
 
