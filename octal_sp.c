@@ -35,4 +35,5 @@ void format_o(va_list arg, char *buffer, int *i)
 		buffer[*i] = oct[x];
 	}
 	free(oct);
+	return (0);
 }
