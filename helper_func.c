@@ -27,6 +27,9 @@ char *itos(char str[], long int n)
 		n *= -1;
 	}
 
+	if (str[0] == '+' || str[0] == ' ')
+		i++;
+
 	length = 0;
 	div = 1;
 	temp = n;
