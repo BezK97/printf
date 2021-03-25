@@ -8,6 +8,8 @@
  *@format:String composed of zero ot more characters to print
  *@n: Integers that contains the index of the string.
  *@i:pointer to number of character.
+ *
+ * Return: 1 on success
  */
 int func_sp(va_list arg, char *buffer, const char *format, int n, int *i)
 {
