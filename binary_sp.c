@@ -39,13 +39,11 @@ int format_b(va_list arg, char *buffer, int *i)
 		itos(num_str, num[j]);
 		num_str2[j] = num_str[0];
 	}
-
+	free(num_str);
 	for (count--; count >= 0; *i += 1, count--)
 	{
 		buffer[*i] = num_str2[count];
 	}
-
-	_putchar(buffer, i);
-	*i = 0;
+	free(num_str2);
 	return (0);
 }
