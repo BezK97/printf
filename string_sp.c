@@ -6,6 +6,8 @@
  * @arg: list of argument
  * @buffer: array that stores string
  * @i: pointer to number of character
+ *
+ * Return: 0 on success
  */
 int format_str(va_list arg, char *buffer, int *i)
 {
@@ -34,6 +36,8 @@ int format_str(va_list arg, char *buffer, int *i)
  * @arg: list of argument
  * @buffer: array that stores string
  * @i: pointer to number of character
+ *
+ * Return: 0 on success
  */
 int format_c(va_list arg, char *buffer, int *i)
 {
