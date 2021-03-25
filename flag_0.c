@@ -28,6 +28,8 @@ void flag_0o(int m, char *buffer, int *i)
 	for (; x >= 0; *i += 1, x--)
 	{
 		buffer[*i] = oct[x];
+		if (x == 0)
+			break;
 	}
 	free(oct);
 }
