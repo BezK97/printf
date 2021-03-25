@@ -6,6 +6,8 @@
  * @arg: list of argument
  * @buffer: array that stores string
  * @i: pointer to number of character
+ *
+ * Return: 0 on success
  */
 int format_u(va_list arg, char *buffer, int *i)
 {
@@ -17,16 +19,10 @@ int format_u(va_list arg, char *buffer, int *i)
 	numlen = num_len(x);
 	num_str = malloc(numlen * sizeof(char));
 	if (num_str == NULL)
-		return(-1);
+		return (0);
 	utos(num_str, x);
 	for (x = *i, j = 0; j < numlen; *i += 1, x++, j++)
 	{
-		if (*i == 1024)
-		{
-			_putchar(buffer, i);
-			reset_putchar(buffer);
-			*i = 0;
-		}
 		buffer[*i] = num_str[j];
 	}
 	free(num_str);
