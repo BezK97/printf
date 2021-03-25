@@ -29,12 +29,6 @@ int format_d(va_list arg, char *buffer, int *i)
 	itos(num_str, x);
 	for (x = *i, j = 0; j < numlen; *i += 1, x++, j++)
 	{
-		if (*i == 1024)
-		{
-			_putchar(buffer, i);
-			reset_putchar(buffer);
-			*i = 0;
-		}
 		buffer[*i] = num_str[j];
 	}
 	free(num_str);
