@@ -19,7 +19,7 @@ void flag_0o(int m, char *buffer, int *i)
 	if (oct == NULL)
 		return;
 	if (m == 0)
-		oct [0] = '0';
+		oct[0] = '0';
 	for (x = 0; m != 0; x++)
 	{
 		oct[x] = octvalues[m % 8];
@@ -58,7 +58,7 @@ void flag_0x(int m, char *buffer, int *i, int k, int l)
 		hex[x] = hexvalues[m % 16];
 		m /= 16;
 	}
-	if(k + count < l)
+	if (k + count < l)
 	{
 		for (k = l - (k + count); k > 0; k--)
 		{
@@ -99,7 +99,7 @@ void flag_0X(int m, char *buffer, int *i, int k, int l)
 		hex[x] = hexvalues[m % 16];
 		m /= 16;
 	}
-	if(k + count < l)
+	if (k + count < l)
 	{
 		for (k = l - (k + count); k > 0; k--)
 		{
@@ -122,21 +122,19 @@ void flag_0X(int m, char *buffer, int *i, int k, int l)
  * @format: String composed of zero ot more characters to print
  * @n: count of format
  * @i: returns pointer to index
+ *
+ * Return: 0 on success
  */
 int flag_0(va_list arg, char *buffer, const char *format, int n, int *i)
 {
-	int x, len, k , m, l;
+	int x, len, k, m, l;
 	char *c;
 
 	m = va_arg(arg, int);
 	k = m;
-
 	x = format[n + 1] - '0';
-
 	for (len = 0;  k != 0; len++)
-	{
 		k /= 10;
-	}
 	if (m <= 0)
 		len++;
 	if (x > len)
@@ -149,17 +147,14 @@ int flag_0(va_list arg, char *buffer, const char *format, int n, int *i)
 		}
 		k = x - len;
 		l = x;
-		for (x = x - len; x > 0; x--)
-		{
+		for (x = x - len; x > 0; x--, *i += 1)
 			buffer[*i] = '0';
-			*i += 1;
-		}
 	}
 	c = malloc(sizeof(char) * len);
 	if ((format[n + 2] == 'i' || format[n + 2] == 'd') || format[n + 2] == 'u')
 	{
 		itos(c, m);
-		for(x = 0; c[x] != '\0'; c++, *i += 1)
+		for (x = 0; c[x] != '\0'; c++, *i += 1)
 		{
 			buffer[*i] = c[x];
 		}
@@ -170,5 +165,5 @@ int flag_0(va_list arg, char *buffer, const char *format, int n, int *i)
 		flag_0x(m, buffer, i, k, l);
 	if (format[n + 2] == 'X')
 		flag_0X(m, buffer, i, k, l);
-	return(2);
+	return (2);
 }
