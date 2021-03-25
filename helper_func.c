@@ -28,19 +28,19 @@ char *itos(char str[], long int n)
 	}
 
 	if (str[0] == '+' || str[0] == ' ')
+	{
 		i++;
+	}
 
 	length = 0;
 	div = 1;
 	temp = n;
-
 	while (temp > 0)
 	{
 		length += 1;
 		div *= 10;
 		temp = temp / 10;
 	}
-
 	div = div / 10;
 	while (div >= 1)
 	{
