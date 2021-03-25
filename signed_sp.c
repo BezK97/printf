@@ -8,6 +8,8 @@
  * @arg: List of arguments
  * @buffer: array of string containing integer
  * @i: pointer to number of character
+ *
+ * Return: 0 on success
  */
 int format_d(va_list arg, char *buffer, int *i)
 {
