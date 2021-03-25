@@ -13,30 +13,37 @@
  */
 int flag_spc(va_list arg, char *buffer, const char *format, int n, int *i)
 {
-	int x, j, numlen, count = 0;
+	int x, j, numlen, count;
 	char *num_str;
 
 	if (format[n + 1] == 'd' || format[n + 1] == 'i')
 	{
 		x = va_arg(arg, long int);
-
 		numlen = num_len(x);
 		numlen += 1;
 		num_str = malloc(numlen * sizeof(char));
 		if (num_str == NULL)
-			return (0);
+			return (free(num_str), 0);
 		if (x >= 0)
-		{
 			num_str[0] = ' ';
-		}
 		itos(num_str, x);
-
-		for (j = 0; num_str[j] != '\0'; *i += 1, j++)
+		for (j = 0, count = 1; num_str[j] != '\0'; *i += 1, j++)
 		{
 			buffer[*i] = num_str[j];
-			count = 1;
 		}
 		free(num_str);
+	}
+	else if (format[n + 1] == '%')
+	{
+		for (j = 0; j < 2; j++)
+		{
+			buffer[*i] = format[n - 1];
+			*i += 1;
+			buffer[*i] = format[n];
+			*i += 1;
+		}
+		for (n++, count = 0; format[n + 1] != '\0'; n++, count++)
+			;
 	}
 	else
 	{
