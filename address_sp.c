@@ -26,6 +26,7 @@ int format_p(va_list arg, char *buffer, int *i)
 		{
 			buffer[*i] = b[x];
 		}
+		return (1);
 	}
 	n = (unsigned long int)a;
 	hexvalues = "0123456789abcdef";
