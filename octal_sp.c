@@ -6,6 +6,8 @@
  * @arg: list of argument
  * @buffer: array that stores string
  * @i: pointer to number of character
+ *
+ * Return: 1 on success
  */
 int format_o(va_list arg, char *buffer, int *i)
 {
@@ -19,7 +21,7 @@ int format_o(va_list arg, char *buffer, int *i)
 
 	oct = malloc(12 * sizeof(char));
 	if (oct == NULL)
-		return(-1);
+		return (0);
 	if (n == 0)
 	{
 		oct[0] = '0';
