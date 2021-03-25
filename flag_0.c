@@ -25,11 +25,9 @@ void flag_0o(int m, char *buffer, int *i)
 		oct[x] = octvalues[m % 8];
 		m /= 8;
 	}
-	for (; x >= 0; *i += 1, x--)
+	for (x--; x >= 0; *i += 1, x--)
 	{
 		buffer[*i] = oct[x];
-		if (x == 0)
-			break;
 	}
 	free(oct);
 }
@@ -68,7 +66,7 @@ void flag_0x(int m, char *buffer, int *i, int k, int l)
 			*i += 1;
 		}
 	}
-	for (; x >= 0; *i += 1, x--)
+	for (x--; x >= 0; *i += 1, x--)
 	{
 		buffer[*i] = hex[x];
 	}
@@ -109,7 +107,7 @@ void flag_0X(int m, char *buffer, int *i, int k, int l)
 			*i += 1;
 		}
 	}
-	for (; x >= 0; *i += 1, x--)
+	for (x--; x >= 0; *i += 1, x--)
 	{
 		buffer[*i] = hex[x];
 	}
