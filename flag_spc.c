@@ -31,7 +31,7 @@ int flag_spc(va_list arg, char *buffer, const char *format, int n, int *i)
 		}
 		itos(num_str, x);
 
-		for (x = *i, j = 0; j < numlen; *i += 1, x++, j++)
+		for (j = 0; num_str[j] != '\0'; *i += 1, j++)
 		{
 			buffer[*i] = num_str[j];
 			count = 1;
