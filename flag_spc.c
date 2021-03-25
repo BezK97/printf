@@ -33,12 +33,6 @@ int flag_spc(va_list arg, char *buffer, const char *format, int n, int *i)
 
 		for (x = *i, j = 0; j < numlen; *i += 1, x++, j++)
 		{
-			if (*i == 1024)
-			{
-				_putchar(buffer, i);
-				reset_putchar(buffer);
-				*i = 0;
-			}
 			buffer[*i] = num_str[j];
 			count = 1;
 		}
