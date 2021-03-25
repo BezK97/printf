@@ -24,7 +24,7 @@ int flag_plus(va_list arg, char *buffer, int *i)
 	num_str[0] = '+';
 	itos(num_str, x);
 
-	for (x = *i, j = 0; j < numlen; *i += 1, x++, j++)
+	for (j = 0; num_str[j] != '\0'; *i += 1, j++)
 	{
 		buffer[*i] = num_str[j];
 	}
