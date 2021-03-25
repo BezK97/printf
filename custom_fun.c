@@ -5,6 +5,8 @@
  * @arg: argument passed in
  * @buffer: values stored
  * @i: returns pointer to index
+ *
+ * Return: 0 on success
  */
 int format_r(va_list arg, char *buffer, int *i)
 {
@@ -35,6 +37,8 @@ int format_r(va_list arg, char *buffer, int *i)
  * @arg: argument passed
  * @buffer: values stored
  * @i: tracks index position
+ *
+ * Return: 0 on success
  */
 int format_R(va_list arg, char *buffer, int *i)
 {
