@@ -8,6 +8,8 @@
  *@format:String composed of zero ot more characters to print
  *@n: Integers that contains the index of the string.
  *@i:pointer to number of character.
+ *
+ * Return: coutn, length
  */
 int flag_spc(va_list arg, char *buffer, const char *format, int n, int *i)
 {
@@ -19,10 +21,10 @@ int flag_spc(va_list arg, char *buffer, const char *format, int n, int *i)
 		x = va_arg(arg, long int);
 
 		numlen = num_len(x);
-		numlen +=1;
+		numlen += 1;
 		num_str = malloc(numlen * sizeof(char));
 		if (num_str == NULL)
-			return(-1);
+			return (0);
 		if (x >= 0)
 		{
 			num_str[0] = ' ';
@@ -48,7 +50,6 @@ int flag_spc(va_list arg, char *buffer, const char *format, int n, int *i)
 		*i += 1;
 		buffer[*i] = format[n];
 		*i += 1;
-		for (x = 1; format[n + x] != '\0'; x++, count++);
 	}
 	return (count);
 }
