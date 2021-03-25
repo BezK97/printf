@@ -65,7 +65,7 @@ void hash_x(va_list arg, char *buffer, int *i)
 		return;
 	if (n == 0)
 	{
-		hex [0] = '0';
+		hex[0] = '0';
 		buffer[*i] = hex[0];
 		*i += 1;
 		buffer[*i] = hex[0];
@@ -135,13 +135,15 @@ void hash_X(va_list arg, char *buffer, int *i)
 }
 
 /**
- *flag_hash -function that checks for octal or hexa
+ * flag_hash - function that checks for octal or hexa
  *
- *@arg: list of argument.
- *@buffer: array of string containing integer.
- *@format:String composed of zero ot more characters to print
- *@n: Integers that contains the index of the string.
- *@i:pointer to number of character.
+ * @arg: list of argument.
+ * @buffer: array of string containing integer.
+ * @format:String composed of zero ot more characters to print
+ * @n: Integers that contains the index of the string.
+ * @i:pointer to number of character.
+ *
+ * Return: 1 0n success
  */
 int flag_hash(va_list arg, char *buffer, const char *format, int n, int *i)
 {
