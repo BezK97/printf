@@ -80,7 +80,9 @@ int _printf(const char *format, ...)
 			n += func_sp(arg, buffer, format, n, i);
 		}
 	}
+	va_end(arg);
 	buffer[*i] = '\0';
 	_putchar(buffer, i);
-	return (va_end(arg), free(buffer), *i);
+	free(buffer);
+	return (*i);
 }
