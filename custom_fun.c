@@ -21,12 +21,6 @@ int format_r(va_list arg, char *buffer, int *i)
 	}
 	for (n = strlen; n >= 0; n--, *i += 1)
 	{
-		if (*i == 1024)
-		{
-			_putchar(buffer, i);
-			reset_putchar(buffer);
-			*i = 0;
-		}
 		buffer[*i] = s[n];
 	}
 	return (0);
