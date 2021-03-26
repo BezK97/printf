@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * format_r - reverse a string passed in
+ * format_r - reverse a string passed in to
  *
  * @arg: argument passed in
  * @buffer: values stored
