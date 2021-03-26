@@ -3,9 +3,9 @@
 #include <string.h>
 
 /**
- * format_d - Function that prints signed integer
+ * format_d - Function that prints signed integer.
  *
- * @arg: List of arguments
+ * @arg: List of arguments.
  * @buffer: array of string containing integer
  * @i: pointer to number of character
  *
