@@ -3,7 +3,7 @@
 /**
  *flag_spc - function that print a space before a positive value
  *
- *@arg: list of argument
+ *@arg: list of argument.
  *@buffer: array of string containing integer.
  *@format:String composed of zero ot more characters to print
  *@n: Integers that contains the index of the string.
