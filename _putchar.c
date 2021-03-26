@@ -9,7 +9,7 @@
  * @i: pointer to number of character.
  *
  * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * On error, -1 is returned, and error is set appropriately.
  */
 void _putchar(char *buffer, int *i)
 {
