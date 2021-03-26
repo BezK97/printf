@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
- * format_p - Function that prints address
+ * format_p - Function that prints address.
  *
- * @arg: list of argument
+ * @arg: list of argument.
  * @buffer: array that stores string
  * @i: pointer to number of character
  *
