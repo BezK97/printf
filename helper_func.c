@@ -4,8 +4,8 @@
 /**
  * itos - Function to convert integer to string
  *
- * @str: array to store string
- * @n: integer
+ * @str: array to store string.
+ * @n: integer.
  *
  * Return: str
  */
