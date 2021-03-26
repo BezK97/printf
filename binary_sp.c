@@ -4,8 +4,8 @@
  * format_b - Function that prints in binary.
  *
  * @arg: list of argument.
- * @buffer: array that stores string
- * @i: pointer to number of character
+ * @buffer: array that stores string.
+ * @i: pointer to number of character.
  *
  * Return: 0 on success
  */
