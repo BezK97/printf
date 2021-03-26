@@ -3,7 +3,7 @@
 #define BUFSIZE 1024
 
 /**
- * _putchar - writes  character c to stdout.
+ * _putchar - writes the character c to stdout.
  *
  * @buffer: The characters to print.
  * @i: pointer to number of character.
