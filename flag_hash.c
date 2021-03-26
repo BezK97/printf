@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
- * hash_o - Function that prints 0 before octal value
+ * hash_o - Function that prints 0 before octal value.
  *
- * @arg: list of argument
+ * @arg: list of argument.
  * @buffer: array that stores string
  * @i: pointer to number of character
  */
