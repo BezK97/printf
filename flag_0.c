@@ -1,11 +1,11 @@
 #include "holberton.h"
 
 /**
- * flag_0o - function that prints octal with 0 flag
+ * flag_0o - function that prints octal with 0 flag.
  *
- * @m: number to print
- * @buffer: values stored
- * @i: pointer to index
+ * @m: number to print.
+ * @buffer: values stored.
+ * @i: pointer to index.
  */
 void flag_0o(int m, char *buffer, int *i)
 {
