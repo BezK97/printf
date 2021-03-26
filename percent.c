@@ -1,10 +1,10 @@
 #include "holberton.h"
 
 /**
- * format_pers - Function that stores percent sign in an array
+ * format_pers - Function that stores percent sign in an array.
  *
  * @arg: unused list of arguments
- * @buffer: array to store '%'
+ * @buffer: array to store '%'.
  * @i: pointer to the number of character
  *
  * Return: 0 on success
