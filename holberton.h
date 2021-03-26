@@ -8,8 +8,8 @@
 /**
  * struct vtype - Struct to map format specifier with function
  *
- * @sp: conversion specifier
- * @fo: pointer to function corresponding the specifier
+ * @sp: conversion specifier.
+ * @fo: pointer to function corresponding the specifier.
  */
 typedef struct vtype
 {
