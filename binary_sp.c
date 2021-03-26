@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
- * format_b - Function that prints in binary
+ * format_b - Function that prints in binary.
  *
- * @arg: list of argument
+ * @arg: list of argument.
  * @buffer: array that stores string
  * @i: pointer to number of character
  *
