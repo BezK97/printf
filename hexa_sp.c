@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
- * format_x - Function that prints hexadecimal
+ * format_x - Function that prints hexadecimal.
  *
- * @arg: list of argument
+ * @arg: list of argument.
  * @buffer: array that stores string
  * @i: pointer to number of character
  *
