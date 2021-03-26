@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- *func_sp -function that contains specifiers and corresponding argument.
+ *func_sp -function that contains specifiers and corresponding arguments.
  *
  *@arg: list of argument.
  *@buffer: array of string containing integer.
