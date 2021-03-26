@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
- * flag_plus - print + before integer if positive and - if negative
+ * flag_plus - print + before integer if positive and - if negative.
  *
- * @arg: list of argument
+ * @arg: list of argument.
  * @buffer: array that stores string
  * @i: pointer to number of character
  *
