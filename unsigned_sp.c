@@ -1,10 +1,10 @@
 #include "holberton.h"
 
 /**
- * format_u - Function that prints unsigned integer
+ * format_u - Function that prints unsigned integer.
  *
- * @arg: list of argument
- * @buffer: array that stores string
+ * @arg: list of argument.
+ * @buffer: array that stores string.
  * @i: pointer to number of character
  *
  * Return: 0 on success
