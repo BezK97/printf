@@ -7,7 +7,7 @@
  * @buffer: array that stores string.
  * @i: pointer to number of character.
  *
- * Return: 0 on success
+ * Return: 0 on success.
  */
 int format_b(va_list arg, char *buffer, int *i)
 {
