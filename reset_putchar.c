@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
- * reset_putchar - Function that resets memory of buffer
+ * reset_putchar - Function that resets memory of buffer.
  *
- * @buffer: memory to reset
+ * @buffer: memory to reset.
  */
 void reset_putchar(char *buffer)
 {
