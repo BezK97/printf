@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
- * format_o - Function that prints octal value
+ * format_o - Function that prints octal value.
  *
- * @arg: list of argument
+ * @arg: list of argument.
  * @buffer: array that stores string
  * @i: pointer to number of character
  *
