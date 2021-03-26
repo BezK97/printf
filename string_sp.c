@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
- * format_str - Function that prints string
+ * format_str - Function that prints string.
  *
- * @arg: list of argument
+ * @arg: list of argument.
  * @buffer: array that stores string
  * @i: pointer to number of character
  *
