@@ -33,6 +33,7 @@ int format_x(va_list arg, char *buffer, int *i);
 int format_X(va_list arg, char *buffer, int *i);
 int format_r(va_list arg, char *buffer, int *i);
 int format_R(va_list arg, char *buffer, int *i);
+int format_S(va_list arg, char *buffer, int *i);
 int format_b(va_list arg, char *buffer, int *i);
 
 int flag_plus(va_list arg, char *buffer, int *i);
