@@ -26,6 +26,11 @@ int func_sp(va_list arg, char *buffer, const char *format, int n, int *i)
 
 	for (j = 0; specifier[j].sp != '\0'; j++)
 	{
+		if ((format[n] > '0' && format[n] <= '9') || format[n] == '*')
+		{
+			k = flag_right(arg, buffer, format, n, i);
+			break;
+		}
 		if (specifier[j + 1].sp == '\0' && specifier[j].sp != '0')
 		{
 			buffer[*i] = format[n - 1];
@@ -45,6 +50,7 @@ int func_sp(va_list arg, char *buffer, const char *format, int n, int *i)
 	}
 	return (k);
 }
+
 /**
  * _printf - function that prints according to a format
  *
@@ -52,10 +58,9 @@ int func_sp(va_list arg, char *buffer, const char *format, int n, int *i)
  *
  * Return: i, number of character printed
  */
-
 int _printf(const char *format, ...)
 {
-	char *buffer = malloc(1024 * sizeof(char));
+	char *buffer = malloc(2048 * sizeof(char));
 	int n, x = 0, *i = &x;
 
 	va_list arg;
