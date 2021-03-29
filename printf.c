@@ -90,5 +90,6 @@ int _printf(const char *format, ...)
 	buffer[*i] = '\0';
 	_putchar(buffer, i);
 	free(buffer);
+	buffer = NULL;
 	return (*i);
 }
