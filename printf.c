@@ -90,6 +90,5 @@ int _printf(const char *format, ...)
 	va_end(arg);
 	buffer[*i] = '\0';
 	_putchar(buffer, i);
-	free(buffer);
 	return (*i);
 }
