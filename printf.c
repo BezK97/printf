@@ -62,13 +62,13 @@ int func_sp(va_list arg, char *buffer, const char *format, int n, int *i)
  */
 int _printf(const char *format, ...)
 {
-	char *buffer[2048];
+	char *buffer = malloc(2048 * sizeof(char));
 	int n, x = 0, *i = &x;
 
 	va_list arg;
 
 	if (!format)
-		return (-1);
+		return (free(buffer), -1);
 	va_start(arg, format);
 	for (n = 0; format[n] != '\0'; n++)
 	{
@@ -89,5 +89,6 @@ int _printf(const char *format, ...)
 	va_end(arg);
 	buffer[*i] = '\0';
 	_putchar(buffer, i);
+	free(buffer);
 	return (*i);
 }
