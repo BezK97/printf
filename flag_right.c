@@ -15,8 +15,13 @@ void flag_right_diuc(va_list arg, char *buffer, int *i, int z, char h)
 	char *num_str;
 
 	x = va_arg(arg, int);
-	s = num_len(x);
-
+	if (x < 0)
+	{
+		s = num_len(-x);
+		s++;
+	}
+	else
+		s = num_len(x);
 	if (h == 'c')
 	{
 		for (len = z - 1; len > 0; len--, *i += 1)
@@ -185,14 +190,13 @@ int flag_right(va_list arg, char *buffer, const char *format, int n, int *i)
 	else
 		z = format[n] - '0';
 	h = format[n + 1];
-
 	if ((format[n + 1] == 'd' || format[n + 1] == 'i') ||
 	    (format[n + 1] == 'u' || format[n + 1] == 'c'))
 		flag_right_diuc(arg, buffer, i, z, h);
 	if (format[n + 1] == 'o')
 		flag_right_o(arg, buffer, i, z);
 	if (format[n + 1] == 'x' || format[n + 1] == 'X')
-		flag_right_xX(arg, buffer, i, z, n);
+		flag_right_xX(arg, buffer, i, z, h);
 	if (format[n + 1] == 's')
 		flag_right_s(arg, buffer, i, z);
 	return (1);
