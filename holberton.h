@@ -40,8 +40,10 @@ int flag_plus(va_list arg, char *buffer, int *i);
 int flag_spc(va_list arg, char *buffer, const char *format, int n, int *i);
 int flag_hash(va_list arg, char *buffer, const char *format, int n, int *i);
 int flag_0(va_list arg, char *buffer, const char *format, int n, int *i);
-int flag_left(va_list arg, char *buffer, const char *format,int n, int *i);
-int flag_right(va_list arg, char *buffer, const char *format,int n, int *i);
+int flag_left(va_list arg, char *buffer, const char *format, int n, int *i);
+int flag_right(va_list arg, char *buffer, const char *format, int n, int *i);
+
+int precision(va_list arg, char *buffer, const char *format, int n, int *i);
 
 char *itos(char str[], long int n);
 char *utos(char str[], unsigned int num);
