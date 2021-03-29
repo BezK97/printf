@@ -180,9 +180,6 @@ int precision(va_list arg, char *buffer, const char *format, int n, int *i)
 	else if (format[n + 2] == 's')
 		precision_s(arg, buffer, i, z);
 	else
-	{
-		buffer[*i] = '\0';
-		*i += 1;
-	}
+		return (1);
 	return (2);
 }
