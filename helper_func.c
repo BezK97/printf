@@ -23,14 +23,10 @@ char *itos(char str[], long int n)
 	}
 	n = (n / 10);
 	if (n < 0)
-	{
 		n *= -1;
-	}
 
 	if (str[0] == '+' || str[0] == ' ')
-	{
 		i++;
-	}
 
 	length = 0;
 	div = 1;
@@ -122,12 +118,9 @@ int num_len(unsigned int num)
  */
 int _strlen(char *s)
 {
-	int i, count;
+	int i;
 
-	count = 0;
 	for (i = 0; s[i] != '\0'; i++)
-	{
-		count++;
-	}
+		;
 	return (i);
 }
