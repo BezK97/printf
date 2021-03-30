@@ -22,11 +22,9 @@ int format_p(va_list arg, char *buffer, int *i)
 	b = "(nil)";
 	if (a == NULL)
 	{
-		for (x = 0; x < 5; x++, *i += 1)
-		{
+		for (x = 0; b[x] != '\0'; x++, *i += 1)
 			buffer[*i] = b[x];
-		}
-		return (1);
+		return (0);
 	}
 	n = (unsigned long int)a;
 	hexvalues = "0123456789abcdef";
