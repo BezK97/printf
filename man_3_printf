@@ -65,6 +65,7 @@ both are used.
  .B  _printf("%S\n", "Holberton\nSchool");
  .IP
  .B Holberton\x0ASchool
+ .IP
 .SH BUGS
 No known bugs
 .SH AUTHORS
