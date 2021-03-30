@@ -54,18 +54,18 @@ A sign (+ or -) should always be placed before a number produced by a signed con
 both are used.
 .IP #
  The value should be converted to an "alternate form".  For o conversions, the first character of the output string is made zero.
- .Ip 
+.Ip b
  "%b"takes in an unsigned integer and converts the argument into converted to binary.
- .Ip r
+.Ip r
  "%r" it takes a string and prints the reversed string.
- .Ip R
+.Ip R
  "%R" it takes a string and prints the rot13'ed string.
  .Ip S
  "%S" it takes a string and change Non printable characters  by \x .
- .B  _printf("%S\n", "Holberton\nSchool");
- .IP
- .B Holberton\x0ASchool
- .IP
+.B  _printf("%S\n", "Holberton\nSchool");
+.IP
+.B Holberton\x0ASchool
+.IP
 .SH BUGS
 No known bugs
 .SH AUTHORS
