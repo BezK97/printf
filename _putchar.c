@@ -5,7 +5,7 @@
  * _putchar - writes the character c to stdout.
  *
  * @buffer: The characters to print.
- * @i: pointer to number of character.
+ * @i: pointer to number of character
  *
  * Return: On success 1.
  * On error, -1 is returned, and error is set appropriately.
