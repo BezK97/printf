@@ -66,7 +66,7 @@ int _printf(const char *format, ...)
 	int n, x = 0, *i = &x;
 	va_list arg;
 
-	buffer = malloc(3500 * sizeof(char));
+	buffer = malloc(2048 * sizeof(char));
 	if (buffer == NULL)
 		return (-1);
 	if (!format)
