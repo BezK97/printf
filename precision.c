@@ -47,6 +47,7 @@ void precision_diu(va_list arg, char *buffer, int *i, int z)
 	}
 	for (len--; len >= 0; len--, *i += 1)
 		buffer[*i] = num_str[len];
+	free(num_str);
 }
 
 /**
