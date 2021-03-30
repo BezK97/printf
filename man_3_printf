@@ -43,7 +43,28 @@ The argument passed for specifiers "%o", "%u", "%x", and "%X" are handled as fol
 "%x","%X" takes in an unsigned integer and converts the argument into an unsigned hexadecimal. For "x", letters "abcdef" are used while for "X", letters "ABCDEF" are used.
 .IP p
 The void * pointer argument is printed in hexadecimal
-
+.IP -
+The converted value is to be left adjusted on the field boundary.The converted value is padded on the right with blanks, rather than on the left with blanks or zeros. 
+.IP ' '
+(a space) A blank should be left before a positive number (or empty string) produced by a signed conversion.
+.IP 0
+The value should be zero padded. For other specifier conversions, the converted value is padded on the left with zeros rather than blanks.
+.IP +
+A sign (+ or -) should always be placed before a number produced by a signed conversion.  By default, a sign is used only for negative numbers.  A + overrides a space if
+both are used.
+.IP #
+ The value should be converted to an "alternate form".  For o conversions, the first character of the output string is made zero.
+ .Ip 
+ "%b"takes in an unsigned integer and converts the argument into converted to binary.
+ .Ip r
+ "%r" it takes a string and prints the reversed string.
+ .Ip R
+ "%R" it takes a string and prints the rot13'ed string.
+ .Ip S
+ "%S" it takes a string and change Non printable characters  by \x .
+ .B  _printf("%S\n", "Holberton\nSchool");
+ .IP
+ .B Holberton\x0ASchool
 .SH BUGS
 No known bugs
 .SH AUTHORS
