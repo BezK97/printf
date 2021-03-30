@@ -19,7 +19,10 @@ void flag_0o(int m, char *buffer, int *i)
 	if (oct == NULL)
 		return;
 	if (m == 0)
-		oct[0] = '0';
+	{
+		buffer[*i] = '0';
+		*i += 1;
+	}
 	for (x = 0; m != 0; x++)
 	{
 		oct[x] = octvalues[m % 8];
